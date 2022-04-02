@@ -1,0 +1,499 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px; /*=1 rem*/
+  font-family: "Oswald", sans-serif;
+}
+/* HEADER CSS */
+header {
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: absolute;
+  width: 100%;
+  /* z-index: 10; */
+}
+.header__content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo {
+  text-decoration: none;
+  color: white;
+}
+.logo span {
+  font-size: 2rem;
+}
+.menu ul {
+  list-style: none;
+}
+.menu ul li {
+  display: inline;
+  padding: 0 1.25rem;
+}
+.menu ul li a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  transition: all 0.5s;
+}
+.menu ul li.active a {
+  color: red;
+}
+.menu ul li a:hover {
+  color: red;
+}
+/* END HEADER CSS */
+
+/* CAROUSEL */
+#carousel {
+  background-image: url(./../image-video/home_slider.jpg);
+  height: 700px;
+  background-position: center;
+  background-size: cover;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* position: relative; */
+}
+.carousel__content {
+  text-align: center;
+  color: white;
+}
+.carousel__content p {
+  font-size: 25px;
+}
+.carousel__content h1 {
+  font-size: 75px;
+  line-height: 90px;
+}
+.carousel__content button {
+  padding: 15px 25px;
+  background-color: #e62b4a;
+  margin-top: 20px;
+  border: 1px solid #e62b4a;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.carousel__content button:hover {
+  background-color: #af2239;
+}
+.arrow__down {
+  margin-top: 30px;
+  animation: arrowdown 1.5s linear 0.5s infinite;
+}
+@keyframes arrowdown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+/* END CAROUSEL CSS */
+
+/* SERVICE  */
+#service {
+  background-color: black;
+  padding: 6rem 0;
+  color: white;
+}
+.service__title {
+  text-align: center;
+}
+.service__title h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+.service__title p:first-of-type {
+  color: red;
+  font-size: 1rem;
+}
+.service__title p:last-of-type {
+  color: #888888;
+  font-size: 1.2rem;
+}
+.slider__content {
+  width: 70%;
+  margin: 0 auto;
+}
+.slider__content .item {
+  background-color: white;
+  color: #888888;
+  margin: 20px 10px;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+.slider__content .item::after {
+  content: "";
+  display: block;
+  background-color: red;
+  height: 0;
+  width: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 0.5s ease-in-out;
+}
+.slider__content .item:hover::after {
+  height: 100%;
+}
+.slick-dots li.slick-active button:before {
+  font-size: 1rem;
+  color: red;
+}
+.slick-dots li button:before {
+  font-size: 1rem;
+  color: white;
+}
+/* END SERVICE CSS */
+
+/* SHOWCASE  */
+#showcase {
+  padding: 6rem 0;
+}
+.showcase__title {
+  text-align: center;
+}
+.showcase__title h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+.showcase__title p:first-of-type {
+  color: #888888;
+  font-size: 1rem;
+}
+.showcase__title p:last-of-type {
+  color: #888888;
+  font-size: 1.2rem;
+}
+.showcase__content {
+  margin-top: 3rem;
+}
+.showcase__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 80%;
+  margin: 0 auto;
+}
+.showcase__item {
+  position: relative;
+}
+.showcase__item img {
+  height: 100%;
+  width: 100%;
+  filter: grayscale(100%) contrast(50%);
+
+}
+.showcase__overlay {
+  background-color: #fd3d3d69;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: white;
+  opacity: 0;
+}
+
+.showcase__text {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  transform: translateY(20px);
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+.showcase__icon {
+  font-size: 20px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.showcase__icon i {
+  color: black;
+  background: white;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  transform: translateY(20px);
+  transition: all 0.5s;
+  opacity: 0;
+}
+.showcase__item:hover .showcase__icon i, .showcase__item:hover .showcase__text {
+  transform: translateY(0px);
+  opacity: 1;
+}
+.showcase__item:hover .showcase__overlay {
+  opacity: 1;
+}
+/* END SHOWCASE CSS */
+
+/* BLOG  */
+#blog {
+  padding: 6rem 0;
+}
+.blog__title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.blog__title h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+.blog__title p:first-of-type {
+  color: #888888;
+  font-size: 1rem;
+}
+.blog__title p:last-of-type {
+  color: #888888;
+  font-size: 1.2rem;
+}
+.blog__content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+}
+.blog__item {
+  filter: grayscale(30%) contrast(50%);
+  
+}
+.blog__item:hover {
+  filter: none;
+}
+.blog__item.blog__metro1 {
+  grid-area: 1 / 1 / span 2 / span 2;
+}
+.blog__item.blog__metro10 {
+  grid-area: 3 / 3 / span 2 / span 2;
+}
+.blog__item img {
+  width: 100%;
+  display: block;
+}
+/* END BLOG CSS */
+
+/* NUMBER  */
+#count {
+  padding: 6rem 0;
+  background-color: black;
+  color: white;
+}
+.count__content {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin: 0 auto;
+}
+.count__item p:first-of-type {
+  font-size: 70px;
+}
+.count__item p:last-of-type {
+  font-size: 20px;
+  color: #888888;
+}
+/* END NUMBER CSS */
+
+/* digital  */
+#digital {
+  background-image: url(./../image-video/bussiness_img_1.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 100px 0;
+}
+.digital__title {
+  text-align: center;
+  color: white;
+}
+.digital__title h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+.digital__title p:first-of-type {
+  color: red;
+  font-size: 1rem;
+}
+.digital__title p:last-of-type {
+  color: #888888;
+  font-size: 1.2rem;
+}
+.digital__content {
+  width: 70%;
+  margin: 50px auto;
+}
+.digital__content video {
+  width: 100%;
+}
+/* END digital CSS */
+
+/* CONTACT  */
+#contact {
+  margin: 6rem 0;
+}
+.contact__title {
+  text-align: center;
+}
+.contact__title h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+.contact__title p {
+  color: #888888;
+  font-size: 1.2rem;
+}
+.contact__content {
+  width: 70%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: left;
+}
+.contact__map {
+  width: 60%;
+}
+.contact__form {
+  width: 40%;
+}
+.contact__form form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+}
+.contact__form input,
+.contact__form textarea {
+  font-size: 15px;
+  padding: 1rem;
+  border: 1px solid #888888;
+  border-radius: 2px;
+  margin-bottom: 15px;
+}
+
+.contact__btn {
+  padding: 20px 30px;
+  border: 1px solid black;
+  background-color: #000;
+  color: #ffffff;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.contact__btn:hover {
+  background-color: #af2239;
+}
+/* END CONTACT CSS */
+
+/* FOOTER  */
+footer {
+  background-color: black;
+}
+.footer__content {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 0;
+}
+.footer__content p {
+  font-size: 20px;
+  color: white;
+}
+.footer__content a {
+  width: 54px;
+  height: 54px;
+  display: inline-block;
+  border-radius: 50%;
+  line-height: 54px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  margin-left: 5px;
+  text-decoration: none;
+  color: #ffffff;
+  transition: all 0.5s;
+}
+.footer__content a i {
+  font-size: 20px;
+}
+.backToTop {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 4px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.25);
+  font-weight: bold;
+  color: #fff;
+  font-size: 20px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  visibility: hidden;
+}
+.cd-top--is-visible { 
+  visibility: visible;
+  opacity: 1;
+}
+
+.cd-top--fade-out {
+  opacity: .5;
+}
+/* .square {
+  background-color: red;
+  height: 200px;
+  width: 200px;
+  position: relative;
+  animation-name: demoAnimation;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes demoAnimation {
+  0% {
+    top: 0;
+    left: 0;
+    background-color: red;
+  }
+  25% {
+    top: 0;
+    left: 1000px;
+    background-color: aqua;
+  }
+  50% {
+    top: 200px;
+    left: 1000px;
+    background-color: yellow;
+  }
+  75% {
+    top: 200px;
+    left: 0;
+    background-color: pink;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    background-color: white;
+  }
+} */
+
+/* MINIFY CSS sẽ nén file lại nhẹ hơn */
